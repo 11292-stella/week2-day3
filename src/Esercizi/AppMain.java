@@ -44,6 +44,12 @@ public class AppMain {
 
         List<Order> ordiniConBaby = ordini.stream().filter(order -> order.getProducts().stream().anyMatch(product -> product.getCategory().equals("Baby"))).toList();
         ordiniConBaby.forEach(System.out ::println);
+        System.out.println("--------------------------------------");
+        //esercizio 3 ottenere una lista di prodotti che appartengono alla categoria Boys
+        //modifica il prezzo di questi prodotti applicando il 10% di sconto e raccogli i risultati in una nuova lista
+
+        List<Product> allBoys = prodotti.stream().filter(product -> product.getCategory().equals("Boys")).map(product -> new Product(product.getId(), product.getName(), product.getCategory(), product.getPrice()*9)).toList();
+        allBoys.forEach(System.out ::println);
 
 
 
